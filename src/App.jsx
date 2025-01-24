@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FirstPage from "./Components/FirstPage";
+import FirstPage from "./Components/Firstpage";
 import Gallery from "./Components/Gallery";
 import AddAsset from "./Components/AddAsset";
 import '@fortawesome/fontawesome-free/css/all.min.css';
