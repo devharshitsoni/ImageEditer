@@ -78,44 +78,50 @@ const EditableImage = ({ image, onImageChange }) => {
           <img
             src={isEditing ? closeIcon : editIcon}
             alt="Edit"
-            className="w-10 h-9 relative top-3  bg-[#00000081]"
+            className="w-9 h-9 relative top-3  bg-[#000000c1]"
           />
         </button>
       </div>
 
       {/* Editing Options */}
       {isEditing && (
-        <div className="absolute top-[10.8%] right-7 bg-[#00000081] text-white flex flex-col items-center space-y-1 opacity-0 animate-fade-in">
-          {[ // Options array
-            { action: "crop", label: "Crop", icon: cropIcon },
-            { action: "rotate", label: "Rotate", icon: rotateIcon },
-            {
-              action: "flipHorizontal",
-              label: "Flip Horizontally",
-              icon: flipHorizontalIcon,
-            },
-            {
-              action: "flipVertical",
-              label: "Flip Vertically",
-              icon: flipVerticalIcon,
-            },
-            { action: "replace", label: "Replace", icon: replaceIcon },
-          ].map(({ action, label, icon }, idx) => (
-            <div
-              key={idx}
-              className="relative group cursor-pointer p-2 opacity-0 animate-option-appear"
-              style={{ animationDelay: `${idx * 100}ms` }}
-              onClick={() => handleOptionClick(action)}
-            >
-              <img src={icon} alt={label} className="w-6 h-6" />
-              {/* Tooltip */}
-              <div className="absolute left-[-120px] top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition">
-                {label}
-              </div>
-            </div>
-          ))}
+  <div className="absolute top-[10.4%] right-7 bg-[#000000c1] text-white flex flex-col items-center space-y-0 opacity-0 animate-fade-in">
+    {[ // Options array
+      { action: "crop", label: "Crop", icon: cropIcon },
+      { action: "rotate", label: "Rotate", icon: rotateIcon },
+      {
+        action: "flipHorizontal",
+        label: "Flip Horizontally",
+        icon: flipHorizontalIcon,
+      },
+      {
+        action: "flipVertical",
+        label: "Flip Vertically",
+        icon: flipVerticalIcon,
+      },
+      { action: "replace", label: "Replace", icon: replaceIcon },
+    ].map(({ action, label, icon }, idx) => (
+      <div
+        key={idx}
+        className="relative group cursor-pointer p-2 opacity-0 animate-option-appear"
+        style={{ animationDelay: `${idx * 100}ms` }}
+        onClick={() => handleOptionClick(action)}
+      >
+        {/* Make icons maintain aspect ratio */}
+        <img
+          src={icon}
+          alt={label}
+          className="w-5 h-auto object-contain" // Ensure consistent sizing
+        />
+        {/* Tooltip */}
+        <div className="absolute left-[-120px] top-1/2 transform -translate-y-1/2 bg-gray-700 text-white text-sm px-2 py-1 rounded-md opacity-0 group-hover:opacity-100 transition">
+          {label}
         </div>
-      )}
+      </div>
+    ))}
+  </div>
+)}
+
 
       {/* Hidden File Input for Image Replacement */}
       <input

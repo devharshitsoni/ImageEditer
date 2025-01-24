@@ -22,6 +22,7 @@ const AddAsset = ({ image, onClose }) => {
   const handleClose = () => {
     setIsVisible(false); // Start the hide transition
     setTimeout(() => {
+      navigate("/gallery"); // Navigate back to the gallery page
       if (onClose) onClose(); // Safely call onClose after transition
     }, 500);
   };
@@ -46,7 +47,7 @@ const AddAsset = ({ image, onClose }) => {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center w-full bg-gray-100 p-4  inset-0 z-10 transform transition-transform duration-500 ${
+      className={`flex flex-col items-center justify-center w-full p-4 inset-0 z-10 transform transition-transform duration-500 ${
         isVisible ? "translate-x-0" : "translate-x-full"
       }`}
     >
