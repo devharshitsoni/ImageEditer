@@ -87,7 +87,7 @@ const Gallery = ({ onSelectImage }) => {
           {/* Filter Options */}
           <div className="relative">
             <button
-              className="py-2 px-6 mr-3 sm:mr-0 bg-white border border-gray-300 rounded-md shadow-sm flex items-center justify-between focus:ring-2 focus:ring-blue-500"
+              className="py-2 px-6 sm:px-3 mr-3 sm:mr-0 bg-white border border-gray-300 rounded-md shadow-sm flex items-center justify-between focus-outline-none"
               onClick={() => setIsFilterOpen((prev) => !prev)}
             >
               <span>Filter</span>
@@ -102,7 +102,14 @@ const Gallery = ({ onSelectImage }) => {
             {isFilterOpen && (
               <div className="absolute mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-10">
                 <div className="p-2">
-                  <label className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer">
+                  <label
+                    className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer"
+                    onClick={() => {
+                      // Handle selection and close the filter
+                      setIsFilterOpen(false);
+                      // Add your filter logic here (e.g., set selected filter state)
+                    }}
+                  >
                     <input
                       type="radio"
                       name="filter"
@@ -110,7 +117,13 @@ const Gallery = ({ onSelectImage }) => {
                     />
                     Newest First
                   </label>
-                  <label className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer">
+                  <label
+                    className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer"
+                    onClick={() => {
+                      setIsFilterOpen(false);
+                      // Add filter logic here
+                    }}
+                  >
                     <input
                       type="radio"
                       name="filter"
@@ -118,7 +131,13 @@ const Gallery = ({ onSelectImage }) => {
                     />
                     Oldest First
                   </label>
-                  <label className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer">
+                  <label
+                    className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer"
+                    onClick={() => {
+                      setIsFilterOpen(false);
+                      // Add filter logic here
+                    }}
+                  >
                     <input
                       type="radio"
                       name="filter"
@@ -174,7 +193,8 @@ const Gallery = ({ onSelectImage }) => {
                   {/* GL Text with Tooltip */}
                   <div
                     className="bg-white w-8 h-8 rounded-full flex items-center justify-center cursor-pointer relative"
-                    onClick={handleGLClick} // Trigger tooltip on click
+                    onMouseEnter={() => setShowTooltip(true)} // Show tooltip on hover
+                    onMouseLeave={() => setShowTooltip(false)} // Hide tooltip when hover ends
                   >
                     <span className="cursor-pointer">GL</span>
                     {/* Tooltip */}
@@ -183,10 +203,13 @@ const Gallery = ({ onSelectImage }) => {
                         <p className="text-[12px] font-[500] text-[#575c66]">
                           Gokul Lalasan
                         </p>
-                        <p className="text-[12px] text-[#707683]">Feb 12, 2023</p>
+                        <p className="text-[12px] text-[#707683]">
+                          Feb 12, 2023
+                        </p>
                       </div>
                     )}
                   </div>
+
                   <div
                     className="relative bg-white w-8 h-8 rounded-full ms-2 flex items-center justify-center cursor-pointer"
                     onClick={(event) => handleOptionsClick(index, event)} // Toggle options visibility
@@ -194,7 +217,7 @@ const Gallery = ({ onSelectImage }) => {
                     <i className="fas fa-ellipsis-h text-grey cursor-pointer"></i>
                     {/* Options Tooltip */}
                     {showOptions === index && (
-                      <div className="absolute w-auto top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md shadow-lg opacity-100 transition-opacity z-13">
+                      <div className="absolute w-auto top-9 sm:top-12 md:top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md shadow-lg opacity-100 transition-opacity z-[2222222222]">
                         <div
                           className="text-sm text-gray-700 hover:bg-gray-100 p-1 cursor-pointer"
                           onClick={(event) => {
