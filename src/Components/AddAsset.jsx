@@ -46,7 +46,7 @@ const AddAsset = ({ image, onClose }) => {
 
   return (
     <div
-      className={`flex flex-col items-center justify-center w-full h-screen bg-gray-100 p-4 fixed inset-0 z-10 transform transition-transform duration-500 ${
+      className={`flex flex-col items-center justify-center w-full bg-gray-100 p-4  inset-0 z-10 transform transition-transform duration-500 ${
         isVisible ? "translate-x-0" : "translate-x-full"
       }`}
     >
@@ -76,9 +76,9 @@ const AddAsset = ({ image, onClose }) => {
             </button>
           </div>
 
-          <div className="flex gap-4">
+          <div className="sm:flex sm:gap-4">
             {/* Left Section - EditableImage */}
-            <div className="w-2/3">
+            <div className="sm:w-2/3">
               {currentImage ? (
                 <EditableImage
                   image={currentImage}
@@ -90,7 +90,7 @@ const AddAsset = ({ image, onClose }) => {
             </div>
 
             {/* Right Section - Form */}
-            <div className="w-1/3 flex flex-col gap-4 relative">
+            <div className="sm:w-1/3 flex flex-col gap-4 relative">
               <input
                 type="text"
                 placeholder="Asset 001"
@@ -101,7 +101,7 @@ const AddAsset = ({ image, onClose }) => {
                 className="border border-gray-300 rounded-lg p-2 h-32 resize-none focus:outline"
               ></textarea>
 
-              <div className="flex flex-wrap gap-x-2 gap-y-2">
+              <div className="flex flex-wrap gap-2 mb-[60px]">
                 {[{ label: "Space", icon: tag }, { label: "Style", icon: tag }, { label: "Package", icon: tag }, { label: "Elements", icon: tag }].map(
                   ({ label, icon }, idx) => (
                     <button

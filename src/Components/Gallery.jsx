@@ -87,7 +87,7 @@ const Gallery = ({ onSelectImage }) => {
           {/* Filter Options */}
           <div className="relative">
             <button
-              className="py-2 px-4 bg-white border border-gray-300 rounded-md shadow-sm flex items-center justify-between focus:ring-2 focus:ring-blue-500"
+              className="py-2 px-6 mr-3 sm:mr-0 bg-white border border-gray-300 rounded-md shadow-sm flex items-center justify-between focus:ring-2 focus:ring-blue-500"
               onClick={() => setIsFilterOpen((prev) => !prev)}
             >
               <span>Filter</span>
@@ -194,7 +194,7 @@ const Gallery = ({ onSelectImage }) => {
                     <i className="fas fa-ellipsis-h text-grey cursor-pointer"></i>
                     {/* Options Tooltip */}
                     {showOptions === index && (
-                      <div className="absolute w-auto top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md shadow-lg opacity-100 transition-opacity z-10">
+                      <div className="absolute w-auto top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md shadow-lg opacity-100 transition-opacity z-13">
                         <div
                           className="text-sm text-gray-700 hover:bg-gray-100 p-1 cursor-pointer"
                           onClick={(event) => {
