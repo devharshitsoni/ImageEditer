@@ -87,7 +87,7 @@ const Gallery = ({ onSelectImage }) => {
           {/* Filter Options */}
           <div className="relative">
             <button
-              className="py-2 px-6 sm:px-3 mr-3 sm:mr-0 bg-white border border-gray-300 rounded-md shadow-sm flex items-center justify-between focus-outline-none"
+              className="py-2 px-6 sm:px-3 mr-3 sm:mr-0 bg-white border border-gray-300 rounded-md shadow-sm flex items-center justify-between focus:outline-none"
               onClick={() => setIsFilterOpen((prev) => !prev)}
             >
               <span>Filter</span>
@@ -105,7 +105,6 @@ const Gallery = ({ onSelectImage }) => {
                   <label
                     className="flex items-center gap-2 hover:bg-gray-100 p-2 rounded-md cursor-pointer"
                     onClick={() => {
-                      // Handle selection and close the filter
                       setIsFilterOpen(false);
                       // Add your filter logic here (e.g., set selected filter state)
                     }}
