@@ -66,7 +66,7 @@ const Gallery = ({ onSelectImage }) => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-start w-full h-screen bg-gray-100 p-4 ">
+    <div className="flex flex-col items-center justify-start w-full h-screen  p-4 ">
       {/* Header */}
       <div className="flex justify-between items-center w-full max-w-6xl pb-4">
         {/* Search Bar and Filter */}
@@ -217,7 +217,7 @@ const Gallery = ({ onSelectImage }) => {
   {/* Options Tooltip */}
   {showOptions === index && (
     <div
-      className="absolute top-9 sm:top-12 md:top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md shadow-lg opacity-100 transition-opacity z-[2222222222] max-w-[90vw] w-auto"
+      className="absolute top-9 sm:top-12 md:top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md overflow-hidden shadow-lg opacity-100 transition-opacity z-[2222222222] max-w-[90vw] w-auto"
       style={{
         whiteSpace: "nowrap", // Prevent wrapping text
         minWidth: "auto", // Ensure consistent minimum width
