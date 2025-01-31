@@ -208,46 +208,45 @@ const Gallery = ({ onSelectImage }) => {
                       </div>
                     )}
                   </div>
-{/* options tooltip startign */}
-<div
-  className="relative bg-white w-8 h-8 rounded-full ms-2 flex items-center justify-center cursor-pointer"
-  onClick={(event) => handleOptionsClick(index, event)} // Toggle options visibility
->
-  <i className="fas fa-ellipsis-h text-grey cursor-pointer"></i>
-  {/* Options Tooltip */}
-  {showOptions === index && (
-    <div
-      className="absolute top-9 sm:top-12 md:top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md overflow-hidden shadow-lg opacity-100 transition-opacity z-[2222222222] max-w-[90vw] w-auto"
-      style={{
-        whiteSpace: "nowrap", // Prevent wrapping text
-        minWidth: "auto", // Ensure consistent minimum width
-      }}
-    >
-      <div
-        className="text-sm text-gray-700 hover:bg-gray-100 p-1 cursor-pointer"
-        onClick={(event) => {
-          event.stopPropagation();
-          handleEdit(src);
-        }} // Open image for editing
-      >
-        Edit
-      </div>
-      <div
-        className="text-sm text-gray-700 hover:bg-gray-100 p-1 cursor-pointer"
-        onClick={(event) => handleHide(index, event)} // Hide image
-      >
-        Hide
-      </div>
-      <div
-        className="text-sm text-red-600 hover:bg-red-100 p-1 cursor-pointer"
-        onClick={(event) => handleDelete(index, event)} // Delete image
-      >
-        Delete
-      </div>
-    </div>
-  )}
-</div>
-
+                  {/* options tooltip startign */}
+                  <div
+                    className="relative bg-white w-8 h-8 rounded-full ms-2 flex items-center justify-center cursor-pointer"
+                    onClick={(event) => handleOptionsClick(index, event)} // Toggle options visibility
+                  >
+                    <i className="fas fa-ellipsis-h text-grey cursor-pointer"></i>
+                    {/* Options Tooltip */}
+                    {showOptions === index && (
+                      <div
+                        className="absolute top-9 sm:top-12 md:top-9 left-1/2 transform -translate-x-1/2 bg-white text-center p-2 rounded-md overflow-hidden shadow-lg opacity-100 transition-opacity z-[2222222222] max-w-[90vw] w-auto"
+                        style={{
+                          whiteSpace: "nowrap", // Prevent wrapping text
+                          minWidth: "auto", // Ensure consistent minimum width
+                        }}
+                      >
+                        <div
+                          className="text-sm text-gray-700 hover:bg-gray-100 p-1 cursor-pointer"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            handleEdit(src);
+                          }} // Open image for editing
+                        >
+                          Edit
+                        </div>
+                        <div
+                          className="text-sm text-gray-700 hover:bg-gray-100 p-1 cursor-pointer"
+                          onClick={(event) => handleHide(index, event)} // Hide image
+                        >
+                          Hide
+                        </div>
+                        <div
+                          className="text-sm text-red-600 hover:bg-red-100 p-1 cursor-pointer"
+                          onClick={(event) => handleDelete(index, event)} // Delete image
+                        >
+                          Delete
+                        </div>
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
